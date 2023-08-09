@@ -1,0 +1,415 @@
+html {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0; 
+}
+
+body {
+    background-color: #dddddd;
+    // margin: 50px;
+}
+
+.reflex-element {
+    background-color: rgba(1, 210, 248, 0.06);
+    overflow: hidden !important;
+}
+
+.reflex-element.resizing {
+    background-color: rgba(255, 0, 0, 0.20);
+}
+
+.reflex-splitter.resizing {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.pane-content {
+    text-align: center;
+    position: relative;
+    user-select: none;
+    height: 100%;
+}
+
+.pane-content > label {
+    position: relative;
+    top:30%;
+}
+
+.header {
+    background-color: rgba(1, 210, 248, 0.30);
+    border-bottom: 1px solid #c6c6c6;
+    overflow: hidden !important;
+}
+
+.footer {
+    background-color: rgba(1, 210, 248, 0.30);
+    border-top: 1px solid #c6c6c6;
+    overflow: hidden !important;
+    text-align: center;
+}
+
+.left-pane {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.middle-pane {
+    background-color: rgb(255, 255, 255);
+}
+
+.viewer-2d-pane{
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+.viewer-2d-pane-texts
+{
+    position: absolute;
+}
+.options-pane {
+    background-color: rgb(34, 34, 34);
+    color: #03d8ff;
+}
+
+.viewer-3d-pane {
+    background: rgb(125, 125, 125);
+    background: radial-gradient(
+        circle,
+        rgba(125, 125, 125, 1) 0%,
+        rgba(105, 105, 105, 1) 35%,
+        rgba(45, 45, 45, 1) 100%
+    );
+    color: #000000;
+}
+.viewer-3d-pane-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.viewer-3d-pane-canvas {
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+}
+
+.right-pane {
+    background: rgb(125, 125, 125);
+    background: radial-gradient(
+        circle,
+        rgba(125, 125, 125, 1) 0%,
+        rgba(105, 105, 105, 1) 35%,
+        rgba(45, 45, 45, 1) 100%
+    );
+    color: #000000;
+}
+
+.bottom-pane {
+    background-color: rgb(34, 34, 34);
+    color: #03d8ff;
+}
+
+.pane-control {
+    border-bottom: 1px solid #c6c6c6;
+    background-color: #b3f2fd;
+    overflow: hidden;
+    height: 25px;
+}
+
+.pane-control > label {
+    white-space: nowrap;
+    margin-left: 10px;
+    margin-top: 4px;
+    font-size: 14px;
+    float: left;
+}
+
+.pane-control > button {
+    transition-timing-function: ease;
+    transition-duration: 1.0s;
+    transition-property: all;
+    transition-delay: 0.0s;
+
+    border: 1px solid #eeeeee;
+    background-color: #c6c6c6;
+    border-radius: 6px;
+    position: relative;
+    margin-right: 4px;
+    overflow: hidden;
+    margin-top: 4px;
+    outline: none;
+    float: right;
+    height: 17px;
+    width: 30px;
+}
+
+.pane-control > button:hover {
+    border: 1px solid #0c63ff;
+}
+
+.pane-control > button > label {
+    transition-timing-function: ease;
+    transition-duration: 1.0s;
+    transition-property: all;
+    transition-delay: 0.0s;
+
+    position: relative;
+    font-size: 20px;
+    color: #f0fcff;
+    top: -8px;
+}
+
+.pane-control > button:hover > label {
+    color: #0c63ff;
+}
+
+.ctrl-pane-content {
+    height: calc(100% - 26px);
+    overflow: hidden;
+}
+
+.ctrl-pane-content > label {
+    position: relative;
+    top:30%;
+}
+
+.handle {
+    background: #eae9e9;
+    padding: 8px 0 0 8px;
+    height: 28px;
+}
+
+#demo-basic {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 250px;
+}
+
+#demo-basic-splitter {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 250px;
+}
+
+#demo-splitter-propagation-2x {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 250px;
+}
+
+#demo-splitter-propagation-3x {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 250px;
+}
+
+#demo-advanced {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 600px;
+}
+
+#demo-controls {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 400px;
+}
+
+#demo-size-aware {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 280px;
+}
+
+#demo-storage {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 280px;
+}
+
+#demo-collapse {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 280px;
+}
+
+#demo-handle {
+    border: 1px solid #0c63ff;
+    background-color: white;
+    height: 280px;
+}
+
+#page-footer-filler {
+    height: 100px;
+}
+
+/////////////////////////////////////////////////////////
+// Document body to handle resizing 
+// See: https://github.com/leefsmp/Re-Flex/issues/68
+/////////////////////////////////////////////////////////
+body.reflex-col-resize {
+    cursor: col-resize;
+}
+
+body.reflex-row-resize {
+    cursor: row-resize;
+}
+
+/////////////////////////////////////////////////////////
+// Re-Flex Container
+//
+/////////////////////////////////////////////////////////
+.reflex-container {
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch;        /* align items in Cross Axis */
+    align-content: stretch;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+    position: relative;
+
+    height: 100%;
+    width: 100%;
+    }
+
+.reflex-container.horizontal {
+    flex-direction: column;
+    min-height: 1px;
+}
+
+.reflex-container.vertical {
+    flex-direction: row;
+    min-width: 1px;
+}
+
+/////////////////////////////////////////////////////////
+//Re-Flex Element
+//
+/////////////////////////////////////////////////////////
+.reflex-container > .reflex-element {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.reflex-container.reflex-resizing > .reflex-element {
+    pointer-events: none;
+    user-select: none;
+}
+
+.reflex-container > .reflex-element > .reflex-size-aware {
+    height: 100%;
+    width: 100%;
+}
+
+/////////////////////////////////////////////////////////
+//Re-Flex Splitter
+//
+/////////////////////////////////////////////////////////
+.reflex-container > .reflex-splitter {
+    background-color: #eeeeee;
+    z-index: 100;
+}
+
+.reflex-container > .reflex-splitter.active,
+.reflex-container > .reflex-splitter:hover {
+    background-color: #c6c6c6;
+    transition: all 1s ease;
+}
+
+.horizontal > .reflex-splitter {
+    border-bottom: 1px solid #c6c6c6;
+    border-top: 1px solid #c6c6c6;
+    cursor: row-resize;
+    width: 100%;
+    height: 2px;
+}
+
+.reflex-element.horizontal .reflex-handle {
+    cursor: row-resize;
+    user-select: none;
+}
+
+.reflex-container.horizontal > .reflex-splitter:hover,
+.reflex-container.horizontal > .reflex-splitter.active {
+    border-bottom: 1px solid #eeeeee;
+    border-top: 1px solid #eeeeee;
+}
+
+.reflex-container.vertical > .reflex-splitter {
+    border-right: 1px solid #c6c6c6;
+    border-left: 1px solid #c6c6c6;
+    cursor: col-resize;
+    height: 100%;
+    width: 2px;
+}
+
+.reflex-element.vertical .reflex-handle {
+    cursor: col-resize;
+    user-select: none;
+}
+
+.reflex-container.vertical > .reflex-splitter:hover,
+.reflex-container.vertical > .reflex-splitter.active {
+    border-right: 1px solid #eeeeee;
+    border-left: 1px solid #eeeeee;
+}
+
+/////////////////////////////////////////////////////////
+//Re-Flex Splitter reflex-thin
+//
+/////////////////////////////////////////////////////////
+.reflex-container > .reflex-splitter.reflex-thin {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+    opacity: 0.2;
+    z-index: 100;
+}
+
+.reflex-container > .reflex-splitter.reflex-thin.active
+.reflex-container > .reflex-splitter.reflex-thin:hover {
+    transition: all 1.5s ease;
+    opacity: 0.5;
+}
+
+.reflex-container.horizontal > .reflex-splitter.reflex-thin {
+    border-bottom: 8px solid rgba(255, 255, 255, 0);
+    border-top: 8px solid rgba(255, 255, 255, 0);
+    height: 17px !important;
+    cursor: row-resize;
+    margin: -8px 0;
+    width: 100%;
+}
+
+.reflex-container.horizontal > .reflex-splitter.reflex-thin.active,
+.reflex-container.horizontal > .reflex-splitter.reflex-thin:hover {
+    border-bottom: 8px solid rgba(228, 228, 228, 1);
+    border-top: 8px solid rgba(228, 228, 228, 1);
+}
+
+.reflex-container.vertical > .reflex-splitter.reflex-thin {
+    border-right: 8px solid rgba(255, 255, 255, 0);
+    border-left: 8px solid rgba(255, 255, 255, 0);
+    width: 17px !important;
+    cursor: col-resize;
+    margin: 0 -8px;
+    height: 100%;
+}
+
+.reflex-container.vertical > .reflex-splitter.reflex-thin.active,
+.reflex-container.vertical > .reflex-splitter.reflex-thin:hover {
+    border-right: 8px solid rgba(228, 228, 228, 1);
+    border-left: 8px solid rgba(228, 228, 228, 1);
+}

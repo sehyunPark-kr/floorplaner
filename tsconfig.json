@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "public/*"
+      ]
+    },
+    "verbatimModuleSyntax": true,
+    "types": [
+      "react/experimental"
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "assets.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "public/index.js"  
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
